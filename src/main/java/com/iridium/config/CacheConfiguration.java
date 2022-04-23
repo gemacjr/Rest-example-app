@@ -43,6 +43,18 @@ public class CacheConfiguration {
     @Bean
     public JCacheManagerCustomizer cacheManagerCustomizer() {
         return cm -> {
+            createCache(cm, com.iridium.domain.Region.class.getName());
+            createCache(cm, com.iridium.domain.Country.class.getName());
+            createCache(cm, com.iridium.domain.Location.class.getName());
+            createCache(cm, com.iridium.domain.Department.class.getName());
+            createCache(cm, com.iridium.domain.Department.class.getName() + ".employees");
+            createCache(cm, com.iridium.domain.Task.class.getName());
+            createCache(cm, com.iridium.domain.Task.class.getName() + ".jobs");
+            createCache(cm, com.iridium.domain.Employee.class.getName());
+            createCache(cm, com.iridium.domain.Employee.class.getName() + ".jobs");
+            createCache(cm, com.iridium.domain.Job.class.getName());
+            createCache(cm, com.iridium.domain.Job.class.getName() + ".tasks");
+            createCache(cm, com.iridium.domain.JobHistory.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }
